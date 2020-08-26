@@ -3,8 +3,12 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const userSchema = new Schema({
-    name: {
+    fullName: {
         type: String,
+        required: true
+    },
+    userName: {
+        type:String,
         required: true
     },
     email: {
@@ -15,14 +19,15 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    phoneNumber: {
-        type:String,
+    address: {
+        type: String,
         required: true
     },
-    address: [{
-        type: Schema.Types.ObjectId,
-        ref: "address"
-    }]
+    role: {
+        type: String,
+        default: "User",
+        required: false
+    }
     
 },{
     timestamps: true
