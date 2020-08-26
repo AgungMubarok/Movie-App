@@ -7,7 +7,7 @@ module.exports = {
         }) 
     },
 
-    verifyTOken: (req,res,next) => {
+    verifyToken: (req,res,next) => {
         const bearerToken = req.headers.authorization
         if(!bearerToken){
             res.status(401).json({

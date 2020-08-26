@@ -1,5 +1,6 @@
 const express = require('express')
 const route = express.Router();
+const { verifyToken } = require('../helpers/token')
 
 const {
     getAllData,
@@ -7,8 +8,8 @@ const {
     deleteOne
 } = require('../controllers/HistoryWatch')
 
-route.get('/history', getAllData)
-route.post('/history', addOne)
-route.delete('/history/:id', deleteOne)
+route.get('/history', verifyToken, getAllData)
+route.post('/history', verifyToken, addOne)
+route.delete('/history/:id', verifyToken, deleteOne)
 
 module.exports = route
