@@ -1,6 +1,9 @@
 {
   "name": "mo-exp",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.x"
+  },
   "description": "movie-app with mongoose",
   "main": "index.js",
   "scripts": {
