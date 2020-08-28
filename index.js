@@ -22,10 +22,10 @@ app.get('/', (req, res) => {
     res.send('welcome')
 })
 
-app.use('/', usersRouter)
-app.use('/', moviesRouter)
-app.use('/', subscriptionsRouter)
-app.use('/', historyRouter)
+app.use('/api', usersRouter)
+app.use('/api', moviesRouter)
+app.use('/api', subscriptionsRouter)
+app.use('/api', historyRouter)
 
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => console.log('we re connected'));
